@@ -1,0 +1,14 @@
+<h2>Auctions</h2>
+
+<div *ngFor="let product of auctionList">
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+      >{{ product.name }}</a
+    >
+  </h3>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button type="button" (click)="bid()">Bid</button>
+</div>
